@@ -1,4 +1,4 @@
-import os 
+import os
 from pydub import AudioSegment
 import speech_recognition as sr
 from pydub.silence import split_on_silence
@@ -13,18 +13,25 @@ def load_chunks(filename):
     )
     return audio_chunks
 
-for audio_chunk in load_chunks('./sample_audio/long_audio.mp3'):
-    audio_chunk.export("temp", format="wav")
-    with sr.AudioFile("temp") as source:
+# Ensure the temporary directory exists or create it
+temp_dir = './temp_audio_chunks/'
+if not os.path.exists(temp_dir):
+    os.makedirs(temp_dir)
+
+for idx, audio_chunk in enumerate(load_chunks('./sample_audio/long_audio.mp3')):
+    temp_file = os.path.join(temp_dir, f"chunk_{idx}.wav")
+    audio_chunk.export(temp_file, format="wav")
+    
+    with sr.AudioFile(temp_file) as source:
         audio = recognizer.listen(source)
         try:
             text = recognizer.recognize_google(audio)
-            print("Chunk : {}".format(text))
+            print(f"Chunk {idx}: {text}")
         except Exception as ex:
-            print("Error occured")
-            print(ex)
+            print(f"Error occurred with chunk {idx}: {ex}")
+
+# Optionally, clean up temporary files
+for temp_file in os.listdir(temp_dir):
+    os.remove(os.path.join(temp_dir, temp_file))
 
 print("++++++")
-
-
-

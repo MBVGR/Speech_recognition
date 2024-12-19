@@ -115,8 +115,8 @@ Did you find this information useful, then give it a star
 
 
 Credits
------------
-All the credits to [kalebu](github.com/kalebu) 
+----------
+
 
 
 *The Only limits are the one you have set upon yourself @unkown*
