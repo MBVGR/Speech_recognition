@@ -1,4 +1,4 @@
-<h1 align = "center"> Speech Recognition in Python </h1>
+<h1 align = "center"> Speech Recognition in Python by Venkat </h1>
 
 
 Python-Speech-Recognition
@@ -101,12 +101,7 @@ $ python3 app_audio.py
     Done recording
     Recognizing the text
     Decoded Text : python programming is the best of all by Jordan
-```
 
-Explore and build your own thing
----------------------------------
-
-Well Hope you had amazing time practicing Some Speech Recognition Now It's your turn to create something useful out of what you just learned.
 
 
 Give it a star 
@@ -116,7 +111,6 @@ Did you find this information useful, then give it a star
 
 Credits
 ----------
+MORI BHANU VENKATA GANGADHARA RAO
 
 
-
-*The Only limits are the one you have set upon yourself @unkown*
